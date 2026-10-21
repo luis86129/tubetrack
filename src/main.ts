@@ -4,7 +4,7 @@ const titulo = 'TubeTrack - TypeScript';
 const descripcion = 'Explora y busca tus canciones favoritas';
 let cantidad = 0;
 
-const appDiv: HTMLElement = document.getElementById('app');
+const appDiv: HTMLElement = document.getElementById("app") as HTMLElement;
 
 if (appDiv) {
     appDiv.innerHTML = `
