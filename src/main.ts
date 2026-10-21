@@ -1,6 +1,7 @@
 import './style.css';
 import { canciones } from './canciones';
 import type { Cancion } from './tipos';
+import { filtrarCanciones } from './utilidades';
 
 
 const titulo = 'TubeTrack - TypeScript';
@@ -55,5 +56,16 @@ if (appDiv) {
 
       mostrarCanciones(canciones);
 
+    const buscarInput: HTMLInputElement = document.getElementById(
+        'buscar'
+    ) as HTMLInputElement;
 
+    if (buscarInput) {
+        buscarInput.addEventListener('input', () => {
+            const busqueda = buscarInput.value;
+   
+            const cancionesFiltradas = filtrarCanciones(canciones, busqueda);
+            mostrarCanciones(cancionesFiltradas);
+        });
+      }
 }
